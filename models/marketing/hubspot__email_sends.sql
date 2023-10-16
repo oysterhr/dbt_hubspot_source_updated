@@ -4,6 +4,7 @@ with sends as (
 
     select *
     from {{ ref('hubspot__email_event_sent') }}
+    where RECIPIENT_EMAIL_ADDRESS not like '%oyster%'
 
 ), metrics as (
 

@@ -20,7 +20,7 @@ with events as (
         count(case when event_type = 'SPAMREPORT' then sent_by_event_id end) as spam_reports,
         count(case when event_type = 'PRINT' then sent_by_event_id end) as prints
     from events
-    where sent_by_event_id is not null
+    where sent_by_event_id is not null and (IS_FILTERED_EVENT IS NULL or IS_FILTERED_EVENT = FALSE)
     group by 1
 
 )

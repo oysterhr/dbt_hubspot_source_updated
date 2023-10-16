@@ -13,7 +13,7 @@ with base as (
         email_send_id,
         count(case when subscription_status = 'UNSUBSCRIBED' then 1 end) as unsubscribes
     from base
-    where email_send_id is not null
+    where email_send_id is not null and email_campaign_id <> 0
     group by 1,2
 
 )
