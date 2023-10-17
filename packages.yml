@@ -1,2 +1,3 @@
 packages:
   - git: "https://github.com/oysterhr/dbt_hubspot_source.git"
+    revision: d7177618c80ea593a9303eb659c4bd1697b0c7b4
